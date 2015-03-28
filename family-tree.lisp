@@ -6,9 +6,9 @@
 
 ;;; Generate nodes for people
 (defun generate-person-node (person-id)
-  (let ((person (first (select :people (where (equal :/person-id person-id)))))
-        (birth (first (select :births (where (equal :/birth-person person-id)))))
-        (death (first (select :deaths (where (equal :/death-person person-id))))))
+  (let ((person (get-person person-id))
+        (birth (get-birth person-id))
+        (death (get-death person-id)))
     (format nil "person_~a [label = \"~a\", color = ~a, shape = rectangle];"
             person-id
             (format nil "~a\\\n~a &mdash; ~a"
