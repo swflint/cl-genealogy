@@ -1,0 +1,22 @@
+digraph {
+        grandpa [label = "Fred Bar\n1938-01-01 &mdash; Living", color = blue, shape = rectangle];
+        grandma [label = "Henrietta Bar", color = pink, shape = rectangle];
+        dad [label = "John Bar", color = blue, shape = rectangle];
+        mom;
+        child;
+        uncle;
+        marriagea;
+        marriageb;
+
+        grandpa -> marriagea;
+        grandma -> marriagea;
+
+        marriagea -> dad;
+        //-> marriageb;
+        //mom -> marriageb;
+
+        marriagea -> uncle;
+
+        //marriageb -> child;
+        {mom, dad} -> child;
+}
