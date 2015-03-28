@@ -15,6 +15,15 @@
                               (collect (,column row)))))
        (the boolean (member object possible-values)))))
 
+(defmacro ids-in-table-column (table column)
+  `(lambda (object)
+     (let ((possible-values (iter
+                              (for row in (select ,table))
+                              (collect (,column row)))))
+       (and (listp object)
+          (reduce #'and (map 'list ,(in-table-column table column)
+                           object))))))
+
 (defmacro unique-in-column (table column type)
   `(lambda (object)
      (if (typep object ',type)
@@ -67,6 +76,26 @@
   :/marriage (in-table-column :marriages :/marriage-id)
   :/divorce-date #'stringp)
 
+;;; Common to the notes/records
+(defattributes
+  :/person (in-table-column :people :/person-id)
+  :/birth (in-table-column :births :/birth-id)
+  :/death (in-table-column :deaths :/death-id)
+  :/marriage (in-table-column :marriages :/marriage-id)
+  :/divorce (in-table-column :divorces :/divorce-id))
+
+;;; The Notes table
+(defattributes
+  :/note-id (unique-in-column :notes :/note-id integer)
+  :/note-title #'stringp
+  :/note-text #'stringp
+  :/media-link #'stringp)
+
+;;; The Reports Table
+(defattributes
+  :/report-id (unique-in-column :reports :/report-id integer)
+  :/report-title #'stringp
+  :/report-type (constrain-values "tree" "full" "ahnentafel"))
 
 ;;; insert person
 (defun new-person (name gender birth-date mother father)
