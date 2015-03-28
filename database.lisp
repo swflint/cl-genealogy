@@ -151,6 +151,13 @@
              (where (and (equal :/wife wife)
                        (equal :/husband husband)))))))
 
+;; get marriage (by id)
+(defun get-marriage-id (marriage-id)
+  (with-tx
+    (first
+     (select :marriages
+             (where (and (equal :/marriage-id marriage-id)))))))
+
 ;;; get divorce (by marriage)
 (defun get-divorce (id)
   (with-tx
