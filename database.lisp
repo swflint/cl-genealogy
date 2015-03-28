@@ -119,3 +119,41 @@
                     :/marriage marriage-id
                     :/divorce-date date))
       divorce-id)))
+
+
+;;; Query records
+;;; Get Person
+(defun get-person (id)
+  (with-tx
+    (first
+     (select :people
+             (where (equal :/person-id id))))))
+
+;;; Get Birth record (by person)
+(defun get-birth (id)
+  (with-tx
+    (first
+     (select :births
+             (where (equal :/birth-person id))))))
+
+;;; Get Death Record
+(defun get-death (id)
+  (with-tx
+    (first
+     (select :deaths
+             (where (equal :/death-person id))))))
+
+;;; get marriage (by husband/wife)
+(defun get-marriage (husband wife)
+  (with-tx
+    (first
+     (select :marriages
+             (where (and (equal :/wife wife)
+                       (equal :/husband husband)))))))
+
+;;; get divorce (by marriage)
+(defun get-divorce (id)
+  (with-tx
+    (first
+     (select :divorces
+             (where (equal :/marriage id))))))
