@@ -4,13 +4,6 @@
 
 ;;; "ahnentafel" goes here. Hacks and glory await!
 
-(defun generate-ahnentafel (starting-person number-of-generations &optional (num 1))
-  (let* ((person (get-person starting-person))
-         (birth (get-birth starting-person))
-         (father (:/father birth))
-         (mother (:/mother birth)))
-    ()))
-
 (defun generate-ahnentafel-numbers (starting-person number-of-generations)
   (flet ((get-father (person)
            (:/father (get-birth person)))
