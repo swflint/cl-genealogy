@@ -24,6 +24,7 @@
   :components ((:file "package")
                (:file "database")
                (:file "family-tree")
+               (:file "ahnentafel")
                (:file "templates")
                (:file "routes")
                (:file "genie")))
