@@ -66,6 +66,8 @@
                     <th>Other Parent:</th>
                 </tr>
             </table>
+            <br />
+            <a href="<!-- TMPL_VAR edit-link -->">Edit</a>
         </div>
     </body>
 </html>
