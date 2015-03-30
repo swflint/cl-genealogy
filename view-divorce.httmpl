@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title><!-- TMPL_VAR title --></title>
+    <link rel='StyleSheet' href='/main.css' />
+    <script src='/main.js'></script>
+  </head>
+  <body>
+    <div class='nav'>
+      <ul>
+        <!-- TMPL_LOOP nav -->
+        <!-- TMPL_IF heading -->
+        <!-- TMPL_IF href -->
+        <h2><a href='<!-- TMPL_VAR href -->'><!-- TMPL_VAR heading --></a></h2>
+        <!-- TMPL_ELSE -->
+        <h2><!-- TMPL_VAR heading --></h2>
+        <!-- /TMPL_IF -->
+        <!-- TMPL_ELSE -->
+        <li><a href='<!-- TMPL_VAR href -->'><!-- TMPL_VAR title --></a></li>
+        <!-- /TMPL_IF -->
+        <!-- /TMPL_LOOP -->
+        <hr />
+        <form action='search'
+              method='post'>
+          <input type='text'
+                 name='terms' />
+          <input type='hidden'
+                 name='page'
+                 value='1' />
+          <input type='submit'
+                 value='Search' />
+        </form>
+        <li><a href='search/advanced'>Advanced Search</a></li>
+        <hr />
+        <li><a href='/'>Main</a></li>
+        <li><a href='/help'>Help</a></li>
+        <li><a href='/logout'>Logout</a></li>
+      </ul>
+    </div>
+    <div class='main-content'>
+      <h1><!-- TMPL_VAR title --></h1>
+
+      <!-- TMPL_VAR content -->
+    </div>
+  </body>
+</html>
