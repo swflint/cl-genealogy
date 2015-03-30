@@ -10,7 +10,7 @@
          (docstring (if docstring
                         docstring
                         (format nil "Template caller for ~a, as ~a" old-name name)))
-         (input (merge-pathnames input (asdf:system-source-directory '#:museum-system))))
+         (input (merge-pathnames input (asdf:system-source-directory '#:genie))))
     `(defun ,name (&rest args)
        ,docstring
        (with-output-to-string (*standard-output*)
@@ -121,3 +121,4 @@
     :margin-bottom "5px")))
 
 (define-html-template main-page "mainpage.httmpl")
+(define-html-template person-page "view-person.httmpl")
