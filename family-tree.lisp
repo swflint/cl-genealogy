@@ -62,7 +62,7 @@
          (start-date (:/wedding-date marriage))
          (end-date (:/end-date marriage))
          (divorce (get-divorce marriage-id)))
-    (format nil "marriage_~a [label = \"Married ~a &mdash; ~a\", shape = invtrapezium];"
+    (format nil "marriage_~a [label = \"Married ~a &mdash; ~a\", shape = none];"
             marriage-id
             start-date
             (if (null divorce)
