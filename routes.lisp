@@ -95,7 +95,12 @@
                 (:dt (:a :href (str (genurl 'view/divorce)) "View Divorce"))
                 (:dd "Select and view divorce record.")))))
 (define-route view/person ("view/person")
-  (person-page :nav (generate-nav :main)))
+  (person-page :nav (generate-nav :main)
+               :name "John Smith"
+               :birth-date "2 September 1965"
+               :death-date "Current"
+               :father "Fred Smith"
+               :mother "Jane Doe"))
 (define-route view/birth ("view/birth"))
 (define-route view/marriage ("view/marriage"))
 (define-route view/death ("view/death"))

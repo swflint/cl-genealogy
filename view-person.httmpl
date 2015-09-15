@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title><!-- TMPL_VAR name --></title>
+        <title>Viewing <!-- TMPL_VAR name --></title>
         <link rel='StyleSheet' href='/main.css' />
         <script src='/main.js'></script>
     </head>
@@ -38,12 +38,12 @@
         </div>
         <div class='main-content'>
             <h1><!-- TMPL_VAR name --></h1>
-            <h3><!-- TMPL_VAR birth-date --> &mdash; <!-- death-date --></h3>
+            <h3><!-- TMPL_VAR birth-date --> &mdash; <!-- TMPL_VAR death-date --></h3>
             <br />
             <h3>Parents:</h3>
             <ul>
-                <li>Father: <!-- TMPL_VAR father --></li>
-                <li>Mother: <!-- TMPL_VAR mother --></li>
+                <li><b>Father:</b> <!-- TMPL_VAR father --></li>
+                <li><b>Mother:</b> <!-- TMPL_VAR mother --></li>
             </ul>
             <br />
             <h3>Marriage Records:</h3>
