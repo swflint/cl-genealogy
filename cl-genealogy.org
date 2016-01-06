@@ -3,7 +3,7 @@
 #+EMAIL: swflint@flintfam.org
 #+DATE: \today
 #+INFOJS_OPT: view:info toc:nil path:http://flintfam.org/org-info.js
-#+OPTIONS: toc:nil H:5 ':t *:t d:nil stats:nil t:nil
+#+OPTIONS: toc:nil H:5 ':t *:t d:nil stat:nil todo:nil
 #+PROPERTY: noweb no-export
 #+PROPERTY: comments noweb
 #+LATEX_HEADER: \parskip=5pt
