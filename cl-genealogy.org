@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [6/8]
+* WORKING Data Storage [7/8]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -207,10 +207,27 @@ To keep track of the dissolution of marriages, and to enable correct report gene
     :/divorce-date #'stringp)
 #+END_SRC
 
-** TODO Notes
+** DONE Notes
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
+
+Keeping notes within the database is a good idea, it allows the notes to be linked directly to the relevant data, and can help to keep organized.  To store a note, you need the following pieces of data:
+
+ - Note ID :: The ID used to reference the note.
+ - Title :: The title of the note.
+ - Text :: The text of the note, formatted using markdown.
+ - Media Link :: An optional link to a media file, such as an image or oral history.
+
+#+Caption: Notes Table
+#+Name: notes-table
+#+BEGIN_SRC lisp
+  (defattributes
+      :/note-id (unique-in-column :notes :/note-id integer)
+    :/note-title #'stringp
+    :/note-text #'stringp
+    :/media-link #'stringp)
+#+END_SRC
 
 ** TODO Common Attributes
 :PROPERTIES:
