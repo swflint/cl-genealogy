@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [7/8]
+* DONE Data Storage [8/8]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -229,10 +229,29 @@ Keeping notes within the database is a good idea, it allows the notes to be link
     :/media-link #'stringp)
 #+END_SRC
 
-** TODO Common Attributes
+** DONE Common Attributes
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:18>
 :END:
+
+As LambdaLite is schemaless, the following attributes can be mixed in to other tables, and can be used to help link records quickly and easily.
+
+ - Person :: The ID of a relevant Person.
+ - Birth :: The ID of a relevant Birth.
+ - Death :: The ID of a relevant Death.
+ - Marriage :: The ID of a relevant Marriage.
+ - Divorce :: The ID of a relevant Divorce.
+
+#+Caption: Common Table Attributes
+#+Name: common-table-attributes
+#+BEGIN_SRC lisp
+  (defattributes
+      :/person (in-table-column :people :/person-id)
+    :/birth (in-table-column :births :/birth-id)
+    :/death (in-table-column :deaths :/death-id)
+    :/marriage (in-table-column :marriages :/marriage-id)
+    :/divorce (in-table-column :divorces :/divorce-id))
+#+END_SRC
 
 * WORKING Data Interface [0/10]
 :PROPERTIES:
