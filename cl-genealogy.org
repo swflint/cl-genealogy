@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [5/8]
+* WORKING Data Storage [6/8]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -187,10 +187,25 @@ Further, to be able to keep track of relationships (and thus families), you need
     :/end-date #'stringp)
 #+END_SRC
 
-** TODO Divorces
+** DONE Divorces
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
+
+To keep track of the dissolution of marriages, and to enable correct report generation, we must keep track of divorces.  To do this, we store the following information:
+
+ - Divorce ID :: How the divorce is referred to within the database.
+ - Marriage :: The ID of the marriage the divorce terminates
+ - Divorce Date :: The date the Divorce is effective.
+
+#+Caption: Divorce Table
+#+Name: divorce-table
+#+BEGIN_SRC lisp
+  (defattributes
+    :/divorce-id (unique-in-column :divorces :/divorce-id integer)
+    :/marriage (in-table-column :marriages :/marriage-id)
+    :/divorce-date #'stringp)
+#+END_SRC
 
 ** TODO Notes
 :PROPERTIES:
