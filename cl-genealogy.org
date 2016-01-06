@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [3/9]
+* WORKING Data Storage [4/9]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -141,10 +141,27 @@ Another important thing is to be able to log births, or possible birth dates.  T
     :/birth-location #'stringp)
 #+END_SRC
 
-** TODO Deaths
+** DONE Deaths
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
+
+Furthermore, to be as complete as possible, you need to be able to store and query death information.  This includes things such as:
+
+ - Death ID :: The ID used to track this death record.
+ - Person :: The ID of the person who died.
+ - Date :: When the person died.
+ - Location :: Where the person died.
+
+#+Caption: Deaths Table
+#+Name: deaths-table
+#+BEGIN_SRC lisp
+  (defattributes
+    :/death-id (unique-in-column :deaths :/death-id integer)
+    :/death-person (in-table-column :people :/person-id)
+    :/death-date #'stringp
+    :/death-location #'stringp)
+#+END_SRC
 
 ** TODO Marriages
 :PROPERTIES:
