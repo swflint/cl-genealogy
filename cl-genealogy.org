@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [4/9]
+* WORKING Data Storage [4/8]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -179,11 +179,6 @@ Furthermore, to be as complete as possible, you need to be able to store and que
 :END:
 
 ** TODO Common Attributes
-:PROPERTIES:
-:CREATED:  <2016-01-06 Wed 13:18>
-:END:
-
-** TODO Reports
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:18>
 :END:
