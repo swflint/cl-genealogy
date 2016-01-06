@@ -358,9 +358,34 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :CREATED:  <2016-01-06 Wed 14:35>
 :END:
 
-* TODO GEDCOM Parsing
+* WORKING GEDCOM Handling [0/5]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:15>
+:END:
+
+** TODO Grammar
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:39>
+:END:
+
+** TODO Parser
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:40>
+:END:
+
+** TODO Cross-Reference Resolver
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:41>
+:END:
+
+** TODO Convert To Native Format
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:41>
+:END:
+
+** TODO Export to GEDCOM
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:42>
 :END:
 
 * WORKING Packaging [0/6]
