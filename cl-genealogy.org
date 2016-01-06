@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [4/8]
+* WORKING Data Storage [5/8]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -163,10 +163,29 @@ Furthermore, to be as complete as possible, you need to be able to store and que
     :/death-location #'stringp)
 #+END_SRC
 
-** TODO Marriages
+** DONE Marriages
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
+
+Further, to be able to keep track of relationships (and thus families), you need to be able to track marriages.  This entails keeping track of the following information:
+
+ - Marriage ID :: ID used to track the marriage within this system.
+ - Husband :: ID of the husband in the marriage.
+ - Wife :: ID of the wife in the marriage.
+ - Wedding Date :: Date the marriage was considered to have started.
+ - End Date :: Date the marriage ended (Divorce, death, annulment).
+
+#+Caption: Marriage Table
+#+Name: marriage-table
+#+BEGIN_SRC lisp
+  (defattributes
+    :/marriage-id (unique-in-column :marriages :/marriage-id integer)
+    :/husband (in-table-column :people :/person-id)
+    :/wife (in-table-column :people :/person-id)
+    :/wedding-date #'stringp
+    :/end-date #'stringp)
+#+END_SRC
 
 ** TODO Divorces
 :PROPERTIES:
