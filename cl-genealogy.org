@@ -313,9 +313,24 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
 
-* TODO Ahnentafel Generation
+* WORKING Ahnentafel Generation [0/3]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
+:END:
+
+** TODO Numbering
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:35>
+:END:
+
+** TODO Formatting
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:35>
+:END:
+
+** TODO Final Output
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:35>
 :END:
 
 * TODO GEDCOM Parsing
