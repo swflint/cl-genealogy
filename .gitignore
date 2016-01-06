@@ -8,3 +8,7 @@
 auto/*
 *~
 \#*\#
+*.bbl
+*.lol
+*.pdf
+*.tex
