@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [0/9]
+* WORKING Data Storage [1/9]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -35,10 +35,58 @@ One of the key components of genealogical software is the ability to effectively
 
 To accomplish the storage of this information, I'm using a schema-less relational database management system called LambdaLite, which is written entirely in lisp, and uses the local file system to store data effectively.
 
-** TODO Macros
+** DONE Macros
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:16>
 :END:
+
+To accomplish the goal of storing data within the database system that is LambdaLite, I need to be able to constrain various attributes to be certain values.  To do this, instead of having to manually write code to constrain them each time, I use a few macros to do this.  These macros include:
+
+ - constrain-values :: Constrains to be one of several values.
+      This macro takes one or more arguments, and generates a function that checks to see if the argument passed to it is in any of the given values.
+ - in-table-column :: Checks to see if the value is one of the values in a specific column.
+      This macro takes two arguments, a table name and a column name, then generates a function which will calculate all possible values, iterating for each row in the table, getting the values in the specified column, and then testing the value passed to the function to see if it is a member of the possible values.
+ - ids-in-table-column :: Checks to see if this is one of the possible IDs in a table column.
+      This is done through the same mechanism as ~in-table-column~, but simply ensuring that the passed object is a) a list, and b) the elements in the list are mapped through the ~in-table-column~ result, with the values of a and be being reduced using ~and~ to produce a single boolean.
+ - unique-in-column :: This checks to see whether or not the passed value is within the specified column, ensuring that it is not within it.
+      This function takes three things, a table, a column and a type.  It first ensures that the passed object is of the specified type, and if it is, calculates all values currently in the specified table and column, and then checks to see that the passed object is /not/ within the list.
+
+#+Caption: Data Storage Macros
+#+Name: data-storage-macros
+#+BEGIN_SRC lisp
+  (defmacro constrain-values (&rest values)
+    `(lambda (object)
+       (the boolean
+            (member object (list ,@values)))))
+
+  (defmacro in-table-column (table column)
+    `(lambda (object)
+       (let ((possible-values (iter
+                                (for row in (select ,table))
+                                (collect (,column row)))))
+         (the boolean (member object possible-values)))))
+
+  (defmacro ids-in-table-column (table column)
+    `(lambda (object)
+       (let ((possible-values (iter
+                                (for row in (select ,table))
+                                (collect (,column row)))))
+         (and (listp object)
+            (reduce #'and (map 'list ,(in-table-column table column)
+                             object))))))
+
+  (defmacro unique-in-column (table column type)
+    `(lambda (object)
+       (if (typep object ',type)
+           (let ((possible-values (iter
+                                    (for row in (select ,table))
+                                    (collect (,column row)))))
+             (not (the boolean (member object possible-values)))))))
+
+  (defun generate-table-id (table)
+    (check-type table keyword)
+    (1+ (length (select table))))
+#+END_SRC
 
 ** TODO People
 :PROPERTIES:
