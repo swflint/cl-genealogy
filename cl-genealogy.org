@@ -287,7 +287,37 @@ To keep track of the dissolution of marriages, and to enable correct report gene
 :CREATED:  <2016-01-06 Wed 13:15>
 :END:
 
-* TODO Packaging
+* WORKING Packaging [0/6]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:15>
+:END:
+
+** TODO Data Storage
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:13>
+:END:
+
+** TODO Data Interface
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:14>
+:END:
+
+** TODO Family Tree
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:14>
+:END:
+
+** TODO Ahnentafel
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:14>
+:END:
+
+** TODO Gedcom Parsing
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:14>
+:END:
+
+** TODO ASDF
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 14:14>
 :END:
