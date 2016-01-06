@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* DONE Data Storage [8/8]
+* Data Storage
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -35,7 +35,7 @@ One of the key components of genealogical software is the ability to effectively
 
 To accomplish the storage of this information, I'm using a schema-less relational database management system called LambdaLite, which is written entirely in lisp, and uses the local file system to store data effectively.
 
-** DONE Macros
+** Macros
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:16>
 :END:
@@ -88,7 +88,7 @@ To accomplish the goal of storing data within the database system that is Lambda
     (1+ (length (select table))))
 #+END_SRC
 
-** DONE People
+** People
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
@@ -119,7 +119,7 @@ This is the People table, used to store the most bare information about a person
                   (funcall (in-table-column :people :/person-id) object))))
 #+END_SRC
 
-** DONE Births
+** Births
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
@@ -141,7 +141,7 @@ Another important thing is to be able to log births, or possible birth dates.  T
     :/birth-location #'stringp)
 #+END_SRC
 
-** DONE Deaths
+** Deaths
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
@@ -163,7 +163,7 @@ Furthermore, to be as complete as possible, you need to be able to store and que
     :/death-location #'stringp)
 #+END_SRC
 
-** DONE Marriages
+** Marriages
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
@@ -187,7 +187,7 @@ Further, to be able to keep track of relationships (and thus families), you need
     :/end-date #'stringp)
 #+END_SRC
 
-** DONE Divorces
+** Divorces
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
@@ -207,7 +207,7 @@ To keep track of the dissolution of marriages, and to enable correct report gene
     :/divorce-date #'stringp)
 #+END_SRC
 
-** DONE Notes
+** Notes
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
@@ -229,7 +229,7 @@ Keeping notes within the database is a good idea, it allows the notes to be link
     :/media-link #'stringp)
 #+END_SRC
 
-** DONE Common Attributes
+** Common Attributes
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:18>
 :END:
