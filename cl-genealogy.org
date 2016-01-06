@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [1/9]
+* WORKING Data Storage [2/9]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -88,10 +88,36 @@ To accomplish the goal of storing data within the database system that is Lambda
     (1+ (length (select table))))
 #+END_SRC
 
-** TODO People
+** DONE People
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
+
+This is the People table, used to store the most bare information about a person.  This includes the following:
+
+ - ID :: The ID used to identify the person within the database.
+ - Name :: The name of the person.
+ - Gender :: The gender of the person.  Can be one of:
+   - M
+   - F
+   - T
+ - Father :: The person's father.  This is either an person ID, or 0 if we don't know who the father is.
+ - Mother :: The person's mother.  As with father, this can be either a person ID or 0.
+
+#+Caption: Person Table
+#+Name: person-table
+#+BEGIN_SRC lisp
+  (defattributes
+    :/person-id (unique-in-column :people :/person-id integer)
+    :/person-name #'stringp
+    :/gender (constrain-values "M" "F" "T")
+    :/father (lambda (object)
+               (or (= 0 object)
+                  (funcall (in-table-column :people :/person-id) object)))
+    :/mother (lambda (object)
+               (or (= 0 object)
+                  (funcall (in-table-column :people :/person-id) object))))
+#+END_SRC
 
 ** TODO Births
 :PROPERTIES:
