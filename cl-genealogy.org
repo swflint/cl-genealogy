@@ -3,10 +3,9 @@
 #+EMAIL: swflint@flintfam.org
 #+DATE: \today
 #+INFOJS_OPT: view:info toc:nil path:http://flintfam.org/org-info.js
-#+OPTIONS: toc:nil H:5 ':t *:t
+#+OPTIONS: toc:nil H:5 ':t *:t d:nil stats:nil t:nil
 #+PROPERTY: noweb no-export
 #+PROPERTY: comments noweb
-#+LATEX_HEADER: \usepackage[color]{showkeys}
 #+LATEX_HEADER: \parskip=5pt
 #+LATEX_HEADER: \lstset{texcl=true,breaklines=true,columns=fullflexible,basicstyle=\ttfamily,frame=lines,literate={lambda}{$\lambda$}{1} {set}{$\gets$}1 {setq}{$\gets$}1 {setf}{$\gets$}1 {<=}{$\leq$}1 {>=}{$\geq$}1}
 #+LATEX_CLASS_OPTIONS: [10pt,twoside]
