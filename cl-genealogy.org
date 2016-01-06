@@ -1,0 +1,157 @@
+#+Title: Common Lisp Genealogical Database Manager
+#+AUTHOR: Sam Flint
+#+EMAIL: swflint@flintfam.org
+#+DATE: \today
+#+INFOJS_OPT: view:info toc:nil path:http://flintfam.org/org-info.js
+#+OPTIONS: toc:nil H:5 ':t *:t
+#+PROPERTY: noweb no-export
+#+PROPERTY: comments noweb
+#+LATEX_HEADER: \usepackage[color]{showkeys}
+#+LATEX_HEADER: \parskip=5pt
+#+LATEX_HEADER: \lstset{texcl=true,breaklines=true,columns=fullflexible,basicstyle=\ttfamily,frame=lines,literate={lambda}{$\lambda$}{1} {set}{$\gets$}1 {setq}{$\gets$}1 {setf}{$\gets$}1 {<=}{$\leq$}1 {>=}{$\geq$}1}
+#+LATEX_CLASS_OPTIONS: [10pt,twoside]
+#+LATEX_HEADER: \pagestyle{headings}
+#+LATEX_HEADER: \usepackage[margins=0.75in]{geometry}
+#+LATEX_HEADER: \parindent=0pt
+
+* TODO Introduction                                                   :nonum:
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:13>
+:END:
+
+* TOC                                                         :ignoreheading:
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:13>
+:END:
+
+#+TOC: headlines 3
+#+TOC: listings
+
+* WORKING Data Storage [0/9]
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:14>
+:END:
+
+One of the key components of genealogical software is the ability to effectively store information related to members of a family.  This will include things such as people, birth records, death records, marriage records, divorce records and notes.
+
+To accomplish the storage of this information, I'm using a schema-less relational database management system called LambdaLite, which is written entirely in lisp, and uses the local file system to store data effectively.
+
+** TODO Macros
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:16>
+:END:
+
+** TODO People
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:17>
+:END:
+
+** TODO Births
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:17>
+:END:
+
+** TODO Deaths
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:17>
+:END:
+
+** TODO Marriages
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:17>
+:END:
+
+** TODO Divorces
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:17>
+:END:
+
+** TODO Notes
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:17>
+:END:
+
+** TODO Common Attributes
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:18>
+:END:
+
+** TODO Reports
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:18>
+:END:
+
+* WORKING Data Interface [0/10]
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:15>
+:END:
+
+** TODO Create Person
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:18>
+:END:
+
+** TODO Create Birth
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Create Death
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Create Marriages
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Create Divorce
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Get Person
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Get Birth
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Get Death
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:19>
+:END:
+
+** TODO Get Mariage
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:20>
+:END:
+
+** TODO Get Divorce
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:20>
+:END:
+
+* TODO Family Tree Display
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:14>
+:END:
+
+* TODO Ahnentafel Generation
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:14>
+:END:
+
+* TODO GEDCOM Parsing
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:15>
+:END:
+
+* TODO Packaging
+:PROPERTIES:
+:CREATED:  <2016-01-06 Wed 13:15>
+:END:
