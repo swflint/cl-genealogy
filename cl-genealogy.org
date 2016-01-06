@@ -26,7 +26,7 @@
 #+TOC: headlines 3
 #+TOC: listings
 
-* WORKING Data Storage [2/9]
+* WORKING Data Storage [3/9]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:14>
 :END:
@@ -119,10 +119,27 @@ This is the People table, used to store the most bare information about a person
                   (funcall (in-table-column :people :/person-id) object))))
 #+END_SRC
 
-** TODO Births
+** DONE Births
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:17>
 :END:
+
+Another important thing is to be able to log births, or possible birth dates.  To do this, you need four pieces of information:
+
+ - Birth ID :: The ID used to reference the person's birth.
+ - Person :: The ID of the person born.
+ - Birth Date :: When the person was born.
+ - Birth Location :: Where the person was born.
+
+#+Caption: Births Table
+#+Name: births-table
+#+BEGIN_SRC lisp
+  (defattributes
+    :/birth-id (unique-in-column :births :/birth-id integer)
+    :/birth-person (in-table-column :people :/person-id)
+    :/birth-date #'stringp
+    :/birth-location #'stringp)
+#+END_SRC
 
 ** TODO Deaths
 :PROPERTIES:
