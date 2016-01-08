@@ -396,6 +396,26 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :CREATED:  <2016-01-06 Wed 14:35>
 :END:
 
+#+Caption: Output Ahnentafel
+#+Name: output-ahnentafel
+#+BEGIN_SRC lisp
+  (defun output-ahnentafel (file start-person total-generations)
+    (let ((ahnentafel-text (map 'list
+                             #'format-ahnentafel-record
+                             (sort (generate-ahnentafel-numbers
+                                    start-person
+                                    total-generations)
+                                   #'<
+                                   :key #'car))))
+      (with-open-file (output file
+                              :direction :output
+                              :if-exists :output
+                              :if-does-not-exist :create)
+        (map 'list #'(lambda (line)
+                       (format output "~A~&" line))
+             ahnentafel-text))))
+#+END_SRC
+
 * WORKING GEDCOM Handling [0/5]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:15>
