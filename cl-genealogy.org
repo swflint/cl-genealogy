@@ -377,6 +377,20 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :CREATED:  <2016-01-06 Wed 14:35>
 :END:
 
+#+Caption: Format Ahnentafel Record
+#+Name: format-ahnentafel-record
+#+BEGIN_SRC lisp
+  (defun format-ahnentafel-record (record)
+    (destructuring-bind (number . person) record
+      (let ((name (:/person-name (get-person person)))
+            (birthdate (:/birth-date (get-birth person)))
+            (death (let ((death-record (get-death person)))
+                     (if (null death-record)
+                         ""
+                         (format nil " -- ~a" (:/death-date death-record))))))
+        (format nil "~10,5R: ~A, ~A~A" number name birthdate death)))))
+#+END_SRC
+
 ** TODO Final Output
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 14:35>
