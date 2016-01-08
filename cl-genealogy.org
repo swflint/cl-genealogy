@@ -480,3 +480,17 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 14:14>
 :END:
+
+* Push To Bottom                                              :ignoreheading:
+:PROPERTIES:
+:CREATED:  <2016-01-08 Fri 12:48>
+:END:
+
+#+LATEX: \vfill
+
+* Version Information                                                 :nonum:
+:PROPERTIES:
+:CREATED:  <2016-01-08 Fri 12:49>
+:END:
+
+This document, and the code, forming the ~cl-genealogy~ package is version src_sh{git describe --always --long --dirty --abbrev=10 --tags}
