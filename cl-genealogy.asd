@@ -2,7 +2,7 @@
 ;;;;
 ;;;; Copyright (c) 2015 Samuel Flint <swflint@lisp.technology>
 
-(asdf:defsystem #:genie
+(asdf:defsystem #:cl-genealogy
   :description "Describe genie here"
   :author "Samuel Flint <swflint@lisp.technology>"
   :license "GNU GPLv3 or Later"
@@ -10,7 +10,13 @@
                #:esrap
                #:parse-number
                #:lambdalite
-               #:iterate)
+               #:iterate
+               #:restas
+               #:cl-who
+               #:ironclad
+               #:hunchentoot
+               #:html-template
+               #:lass)
   :serial t
   :components ((:file "package")
                (:file "database")
