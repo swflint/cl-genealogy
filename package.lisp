@@ -9,6 +9,13 @@
                 #:parse-number)
   (:export open-configuration-file))
 
+(defpackage #:cl-genealogy
+  (:use #:lambdalite
+        #:iterate)
+  (:export generate-graph
+           print-ahnentafel
+           database))
+
 (restas:define-module #:genie
   (:use #:cl
         #:lambdalite

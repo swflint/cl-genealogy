@@ -1,6 +1,6 @@
 ;;;; ahnentafel.lisp
 
-(in-package #:genie)
+(in-package #:cl-genealogy)
 
 ;;; "ahnentafel" goes here. Hacks and glory await!
 

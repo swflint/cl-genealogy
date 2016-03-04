@@ -1,6 +1,6 @@
 ;;;; database.lisp
 
-(in-package #:genie)
+(in-package #:cl-genealogy)
 
 ;;; "database" goes here. Hacks and glory await!
 (defmacro constrain-values (&rest values)

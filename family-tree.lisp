@@ -1,6 +1,6 @@
 ;;;; family-tree.lisp
 
-(in-package #:genie)
+(in-package #:cl-genealogy)
 
 ;;; "family-tree" goes here. Hacks and glory await!
 
