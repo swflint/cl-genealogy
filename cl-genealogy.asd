@@ -10,13 +10,7 @@
                #:esrap
                #:parse-number
                #:lambdalite
-               #:iterate
-               #:restas
-               #:cl-who
-               #:ironclad
-               #:hunchentoot
-               #:html-template
-               #:lass)
+               #:iterate)
   :serial t
   :components ((:file "package")
                (:file "database")
