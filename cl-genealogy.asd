@@ -21,5 +21,4 @@
   :components ((:file "package")
                (:file "database")
                (:file "family-tree")
-               (:file "ahnentafel")
-               (:file "genie")))
+               (:file "ahnentafel")))
