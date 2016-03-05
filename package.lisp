@@ -10,11 +10,16 @@
   (:export open-configuration-file))
 
 (defpackage #:cl-genealogy
-  (:use #:lambdalite
+  (:use #:cl
+        #:lambdalite
         #:iterate)
   (:export generate-graph
            print-ahnentafel
-           database))
+           database
+           new-person
+           new-death
+           new-marriage
+           new-divorce))
 
 (restas:define-module #:genie
   (:use #:cl
