@@ -446,10 +446,38 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :CREATED:  <2016-01-06 Wed 14:42>
 :END:
 
+* TODO Configuration File Parsing
+:PROPERTIES:
+:CREATED:  <2016-03-04 Fri 21:00>
+:END:
+
 * WORKING Packaging [0/6]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:15>
 :END:
+
+#+Caption: Package File
+#+Name: package-file
+#+BEGIN_SRC lisp :tangle "package.lisp"
+  (defpackage #:config-parser
+    (:use :esrap
+          :cl)
+    (:import-from #:parse-number
+                  #:parse-number)
+    (:export open-configuration-file))
+
+  (defpackage #:cl-genealogy
+    (:use #:cl
+          #:lambdalite
+          #:iterate)
+    (:export generate-graph
+             print-ahnentafel
+             database
+             new-person
+             new-death
+             new-marriage
+             new-divorce))
+#+END_SRC
 
 ** TODO Data Storage
 :PROPERTIES:
@@ -480,6 +508,25 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 14:14>
 :END:
+
+#+Caption: ASDF Packaging
+#+Name: asdf-packaging
+#+BEGIN_SRC lisp :tangle "cl-genealogy.asd"
+  (asdf:defsystem #:cl-genealogy
+    :description "Describe genie here"
+    :author "Samuel Flint <swflint@lisp.technology>"
+    :license "GNU GPLv3 or Later"
+    :depends-on (#:cl-utilities
+                 #:esrap
+                 #:parse-number
+                 #:lambdalite
+                 #:iterate)
+    :serial t
+    :components ((:file "package")
+                 (:file "database")
+                 (:file "family-tree")
+                 (:file "ahnentafel")))
+#+END_SRC
 
 * Push To Bottom                                              :ignoreheading:
 :PROPERTIES:
