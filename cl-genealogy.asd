@@ -10,7 +10,8 @@
                #:esrap
                #:parse-number
                #:lambdalite
-               #:iterate)
+               #:iterate
+               #:archive)
   :serial t
   :components ((:file "package")
                (:file "database")

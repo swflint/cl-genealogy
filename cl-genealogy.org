@@ -469,7 +469,8 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
   (defpackage #:cl-genealogy
     (:use #:cl
           #:lambdalite
-          #:iterate)
+          #:iterate
+          #:archive)
     (:export generate-graph
              print-ahnentafel
              database
@@ -520,7 +521,8 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
                  #:esrap
                  #:parse-number
                  #:lambdalite
-                 #:iterate)
+                 #:iterate
+                 #:archive)
     :serial t
     :components ((:file "package")
                  (:file "database")

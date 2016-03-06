@@ -12,7 +12,8 @@
 (defpackage #:cl-genealogy
   (:use #:cl
         #:lambdalite
-        #:iterate)
+        #:iterate
+        #:archive)
   (:export generate-graph
            print-ahnentafel
            database
