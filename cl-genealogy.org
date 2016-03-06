@@ -39,10 +39,15 @@
     (org-babel-tangle))
 #+END_SRC
 
-* TODO Introduction                                                   :nonum:
+* DONE Introduction                                                   :nonum:
+CLOSED: [2016-03-06 Sun 13:53]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:13>
 :END:
+
+Genealogy in general is a fairly interesting subject, and can, in the study of history be important.  While there are many libraries and even applications to deal with genealogical data, there has yet to be an adequate genealogy library for Lisp.  The goal is to build a library upon which to build a genealogical research application, and also to possibly integrate into a later application for the management of museum collections and meta-data.
+
+This library is designed from the perspective of a Computer Scientist, rather than that of a genealogist, and as such is not meant to be used directly, but instead is meant to be the basis of a much better genealogy application.
 
 * TOC                                                         :ignoreheading:
 :PROPERTIES:
