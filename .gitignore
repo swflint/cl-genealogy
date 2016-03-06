@@ -12,3 +12,4 @@ auto/*
 *.lol
 *.pdf
 *.tex
+flycheck_*
