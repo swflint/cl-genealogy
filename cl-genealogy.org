@@ -354,7 +354,7 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :END:
 
 #+Caption: Ahnentafel Numbering
-#+Name: ahnentafel-numbers
+#+Name: ahnentafel-numbering
 #+BEGIN_SRC lisp
   (defun generate-ahnentafel-numbers (starting-person number-of-generations)
     (let ((ahnentafel-list (cons (cons 1 starting-person) nil)))
@@ -509,6 +509,16 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 14:14>
 :END:
+
+#+Caption: Put together Ahnentafel
+#+Name: ahnentafel-final
+#+BEGIN_SRC lisp :tangle "ahnentafel.lisp"
+  (in-package #:cl-genealogy)
+
+  <<ahnentafel-numbering>>
+  <<format-ahnentafel-record>>
+  <<output-ahnentafel>>
+#+END_SRC
 
 ** TODO Gedcom Parsing
 :PROPERTIES:
