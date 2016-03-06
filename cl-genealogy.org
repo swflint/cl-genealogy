@@ -253,6 +253,11 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
     :/divorce (in-table-column :divorces :/divorce-id))
 #+END_SRC
 
+* TODO Database Archive
+:PROPERTIES:
+:CREATED:  <2016-03-06 Sun 13:25>
+:END:
+
 * WORKING Data Interface [0/10]
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:15>
@@ -444,6 +449,11 @@ As LambdaLite is schemaless, the following attributes can be mixed in to other t
 ** TODO Export to GEDCOM
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 14:42>
+:END:
+
+* TODO Consanguinity Calculation
+:PROPERTIES:
+:CREATED:  <2016-03-06 Sun 13:29>
 :END:
 
 * TODO Configuration File Parsing
