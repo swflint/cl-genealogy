@@ -1,4 +1,5 @@
-#+Title: Common Lisp Genealogical Database Manager
+#+Title: CL-GENEALOGY
+#+Subtitle: A Common Lisp Genealogical Database System
 #+AUTHOR: Sam Flint
 #+EMAIL: swflint@flintfam.org
 #+DATE: \today
