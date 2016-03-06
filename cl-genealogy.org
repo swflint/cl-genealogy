@@ -13,6 +13,31 @@
 #+LATEX_HEADER: \usepackage[margins=0.75in]{geometry}
 #+LATEX_HEADER: \parindent=0pt
 
+* COMMENT Export
+
+#+Caption: Export the Document
+#+Name: export-document
+#+BEGIN_SRC emacs-lisp :exports none :results none
+  (save-buffer)
+  (let ((org-confirm-babel-evaluate
+         (lambda (lang body)
+           (declare (ignore lang body))
+           nil)))
+    (org-latex-export-to-pdf)
+    (org-latex-export-to-pdf))
+#+END_SRC
+
+* COMMENT Tangle
+
+#+Caption: Tangle This Document
+#+Name: tangle-document
+#+BEGIN_SRC emacs-lisp :exports none :results none
+  (save-buffer)
+  (let ((org-babel-tangle-comment-format-beg "%file [[%link][%source-name]]")
+        (org-babel-tangle-comment-format-end "End %file [[%link][%source-name]]"))
+    (org-babel-tangle))
+#+END_SRC
+
 * TODO Introduction                                                   :nonum:
 :PROPERTIES:
 :CREATED:  <2016-01-06 Wed 13:13>
